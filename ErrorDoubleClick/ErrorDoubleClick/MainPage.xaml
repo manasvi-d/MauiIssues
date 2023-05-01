@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:my="clr-namespace:ErrorDoubleClick"
+             x:Class="ErrorDoubleClick.MainPage">
+	<ContentPage.Resources>
+		<my:MyDrawable x:Key="md" />
+	</ContentPage.Resources>
+	<AbsoluteLayout>
+		<GraphicsView x:Name="gv"
+					  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
+					  Drawable="{StaticResource md}">
+			<GraphicsView.GestureRecognizers>
+				<TapGestureRecognizer Tapped="SingleTap_Tapped"
+											  NumberOfTapsRequired="1" />
+				<TapGestureRecognizer Tapped="DoubleTap_Tapped"
+											  NumberOfTapsRequired="2" />
+			</GraphicsView.GestureRecognizers>
+		</GraphicsView>
+	</AbsoluteLayout>
+</ContentPage>
